@@ -1,24 +1,7 @@
-int readNumber() {
-	int userNumber = 0;
-	while (!(cin >> userNumber))
-	{
-		// Explain error
-		cout << "ERROR: A Number must be entered:\n";
-		cin.clear();
-		cin.ignore(132, '\n');
-	}
-	return  userNumber;
-}
+#include <iostream>
+#include "myLibrary.h"
+using namespace std;
 
-int readPositiveNumber() {
-	int positiveNumber = 0;
-	do {
-		cout << "Please enter a number greater than zero :\n";
-		positiveNumber = readNumber();
-	} while (positiveNumber <= 0);
-
-	return positiveNumber;
-}
 /****Trial Attempts********************************/
 void reverseNumbers_usingString(string s) {
 	for (int i = s.length() - 1;i >= 0;i--)
