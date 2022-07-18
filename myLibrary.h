@@ -23,3 +23,16 @@ int readPositiveNumber() {
 
 	return positiveNumber;
 }
+string readPassword() {
+	string password = "";
+	do{
+		cout << "Please enter the password(3 Uppercase Letters i.e: ABC)\n";
+		password = "";
+		cin >> password;
+	} while (password.length() < 3 ||
+		(int(password[0]) < 65 || int(password[0]) > 90) ||
+		(int(password[1]) < 65 ||int(password[1]) > 90) ||
+		(int(password[2]) < 65 || int(password[2]) > 90)
+		);
+	return  password;
+}
