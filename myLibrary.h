@@ -36,3 +36,10 @@ string readPassword() {
 		);
 	return  password;
 }
+string readText(string message) {
+	string txt = "";
+	cout << message << "\n";
+	txt = "";
+	cin >> txt;
+	return  txt;
+}
