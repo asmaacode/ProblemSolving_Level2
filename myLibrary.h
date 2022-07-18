@@ -43,3 +43,8 @@ string readText(string message) {
 	cin >> txt;
 	return  txt;
 }
+
+int generateRandomNumbers(int from, int to) {
+	//in main call 	srand(time(NULL));
+	return rand() % (to - from + 1) + from;
+}
