@@ -44,11 +44,6 @@ string readText(string message) {
 	return  txt;
 }
 
-int generateRandomNumbers(int from, int to) {
-	//in main call 	srand(time(NULL));
-	return rand() % (to - from + 1) + from;
-}
-
 int readNumberMsg(string msg) {
 	int positiveNumber = 0;
 	do {
@@ -57,4 +52,27 @@ int readNumberMsg(string msg) {
 	} while (positiveNumber <= 0);
 
 	return positiveNumber;
+}
+
+int generateRandomNumbers(int from, int to) {
+	//in main call 	srand(time(NULL));
+	return rand() % (to - from + 1) + from;
+}
+enum randomOptions { smallLetter, capitalLetter, specialCharacter, digit };
+
+char getRandomCharachter(randomOptions randomType) {
+	switch (randomType) {
+	case randomOptions::smallLetter:
+		return char(generateRandomNumbers(int('a'), int('z')));
+		break;
+	case randomOptions::capitalLetter:
+		return char(generateRandomNumbers(int('A'), int('Z')));
+		break;
+	case randomOptions::specialCharacter:
+		return (char)generateRandomNumbers(int('Z') + 1, 128);
+		break;
+	case randomOptions::digit:
+		return (char)generateRandomNumbers(48, 57);
+		break;
+	}
 }
