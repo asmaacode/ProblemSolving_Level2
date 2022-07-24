@@ -1,6 +1,6 @@
-/*#include<iostream>
+#include<iostream>
 #include"myLibrary.h"
-using namespace std;*/
+using namespace std;
 void fillTheArrayRandomly(int arr[], int& arrLength) {
 	for (int i = 0;i < arrLength;i++) {
 		arr[i] = generateRandomNumbers(1, 100);
