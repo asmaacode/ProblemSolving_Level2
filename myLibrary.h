@@ -44,14 +44,20 @@ string readText(string message) {
 	return  txt;
 }
 
-int readNumberMsg(string msg) {
+int readPositiveNumberMsg(string msg) {
 	int positiveNumber = 0;
 	do {
 		cout << msg;
 		positiveNumber = readNumber();
-	} while (positiveNumber <= 0);
+	} while (positiveNumber < 0);
 
 	return positiveNumber;
+}
+int readNumberMsg(string msg) {
+	int number = 0;
+	cout << msg;
+	number = readNumber();
+	return number;
 }
 
 int generateRandomNumbers(int from, int to) {
