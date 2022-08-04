@@ -2,6 +2,7 @@
 #include"myLibrary.h"
 using namespace std;
 
+
 void printArrayElements(int arr[], int& arrLength) {
 	for (int i = 0;i < arrLength;i++) {
 		cout << arr[i] << "  ";
@@ -20,7 +21,7 @@ void fillTheArrayRandomly(int arr[], int arrLength) {
 int countPositiveElements(int arr[], int& arrLength) {
 	int count = 0;
 	for (int i = 0;i < arrLength;i++) {
-		if (arr[i] < 0)
+		if (arr[i] >= 0)
 			count++;
 	}
 	return count;
