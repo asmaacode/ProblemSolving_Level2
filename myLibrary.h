@@ -24,7 +24,6 @@ float readFloatNumber() {
 	}
 	return  userNumber;
 }
-
 int readPositiveNumber() {
 	int positiveNumber = 0;
 	do {
@@ -80,7 +79,6 @@ int generateRandomNumbers(int from, int to) {
 	return rand() % (to - from + 1) + from;
 }
 enum randomOptions { smallLetter, capitalLetter, specialCharacter, digit };
-
 char getRandomCharachter(randomOptions randomType) {
 	switch (randomType) {
 	case randomOptions::smallLetter:
@@ -98,7 +96,6 @@ char getRandomCharachter(randomOptions randomType) {
 	}
 }
 enum enPrimStatus { NotPrime = false, Prime = true };
-
 enPrimStatus isPrime(int target) {
 	if (target == 1)
 		return enPrimStatus::Prime;
@@ -113,4 +110,13 @@ void swap(int& A, int& B) {
 	int temp = A;
 	A = B;
 	B = temp;
+}
+int readNumberInRangeMsg(string msg, int from, int to) {
+	int number = 0;
+	do {
+		cout << msg;
+		number = readNumber();
+	} while (number > to || number < from);
+
+	return number;
 }
