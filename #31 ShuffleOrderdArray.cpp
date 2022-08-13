@@ -1,14 +1,11 @@
 #include<iostream>
 #include"myLibrary.h"
 using namespace std;
-
-
 void swap(int& A, int& B) {
 	int temp = A;
 	A = B;
 	B = temp;
 }
-
 void printArrayElements(int arr[], int& arrLength) {
 	for (int i = 0;i < arrLength;i++) {
 		cout << arr[i] << "  ";
@@ -27,7 +24,6 @@ void shuffleArray(int arr[], int& arrLength) {
 		swap(arr[generateRandomNumbers(1, arrLength) - 1], arr[generateRandomNumbers(1, arrLength) - 1]);
 	}
 }
-
 int main() {
 	srand(time(NULL));
 	int arr[100] = { 0 };
@@ -35,10 +31,8 @@ int main() {
 	fillArrayInOrder(arr, arrLength);
 	cout << "Array Elements Before Shuffle \n";
 	printArrayElements(arr, arrLength);
-
 	shuffleArray(arr, arrLength);
 	cout << "Array Elements After Shuffle \n";
 	printArrayElements(arr, arrLength);
-
 	return 0;
 }
