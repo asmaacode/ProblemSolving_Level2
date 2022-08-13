@@ -4,12 +4,14 @@ using namespace std;
 
 int readNumber() {
 	int userNumber = 0;
-	while (!(cin >> userNumber))
+	cin >> userNumber;
+	while (cin.fail())
 	{
 		// Explain error
 		cout << "ERROR: A Number must be entered:\n";
 		cin.clear();
-		cin.ignore(132, '\n');
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cin >> userNumber;
 	}
 	return  userNumber;
 }
